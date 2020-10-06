@@ -11,7 +11,7 @@ const Register = () => {
      const {title} = useParams();
  const {handleSubmit,register} = useForm();
     const onSubmit = (data) =>{
-        fetch('http://localhost:5000/addRegistration', {
+        fetch('https://shrouded-meadow-25684.herokuapp.com/addRegistration', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -22,7 +22,8 @@ const Register = () => {
         .then(data => {
             history.push('/eventTasks')
             console.log('posted')})
-        console.log(data)
+            .catch(error => console.log(error))
+        // console.log(data)
     
     } 
 
@@ -32,7 +33,7 @@ const Register = () => {
         <div>
             <img style={{ margin: '0 auto', display: 'block' }} className='w-25 ' src={logo} alt="" />
             <div style={{ width: '570px', height: '457px', border: '2px solid #ABABAB' }} className=" container rounded text-center my-5">
-                <Form action="http://localhost:3000/eventTasks"  method = "POST" onSubmit={handleSubmit(onSubmit)} >
+                <Form   onSubmit={handleSubmit(onSubmit)} >
                     <Form.Group as={Row} controlId="formPlaintextFullName">
                         <Form.Label column sm="2">
                             Full name

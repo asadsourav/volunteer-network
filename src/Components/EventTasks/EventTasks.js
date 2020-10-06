@@ -10,7 +10,7 @@ const EventTasks = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/registeredEventsByUser?email=' + loggedInUser.email)
+        fetch('https://shrouded-meadow-25684.herokuapp.com/registeredEventsByUser?email=' + loggedInUser.email)
         .then((response) => response.json())
         .then(data =>{
             setRegisteredEvents(data)

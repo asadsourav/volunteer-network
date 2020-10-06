@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const RegisterList = () => {
 
     const deleteEvent = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://shrouded-meadow-25684.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
         .then((response) => response.json())
@@ -21,7 +21,7 @@ const RegisterList = () => {
     const [eventList,setEventList] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allRegisteredEvents')
+        fetch('https://shrouded-meadow-25684.herokuapp.com/allRegisteredEvents')
         .then(response => response.json())
         .then(data =>setEventList(data))
     },[eventList])

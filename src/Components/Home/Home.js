@@ -11,12 +11,12 @@ const Home = () => {
     const [newEvents, setNewEvents] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/getNewEvents')
-            .then((response) => response.json())
+        fetch('https://shrouded-meadow-25684.herokuapp.com/getNewEvents')
+            .then(response => response.json())
             .then(data => {
                 setNewEvents(data)
             })
-    }, [])
+    }, [newEvents])
     return (
         <div>
             <Header></Header>

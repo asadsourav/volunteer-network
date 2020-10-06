@@ -12,7 +12,7 @@ const AddEvent = () => {
 
     const {handleSubmit,register} = useForm();
     const onSubmit = (data) =>{
-        fetch('http://localhost:5000/addEvent', {
+        fetch('https://shrouded-meadow-25684.herokuapp.com/addEvent', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
